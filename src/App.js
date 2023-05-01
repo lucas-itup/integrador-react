@@ -1,11 +1,21 @@
 import React from "react";
+import {Header} from "./componentes/Header";
+import {BrowserRouter as Router} from "react-router-dom";
+import 'boxicons';
+import {Paginas} from "./componentes/Paginas"
+import {DataProvider} from "./context/Dataprovider"
 
 function App() {
-  return (
-    <div className="App">
-    <h1>Hola Mundo</h1>
-    </div>
-  );
+    return (
+        <DataProvider>
+            <div className="App">
+                <Router>
+                    <Header/>
+                    <Paginas/>
+                </Router>
+            </div>
+        </DataProvider>
+    );
 }
 
 export default App;
