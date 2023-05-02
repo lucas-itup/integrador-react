@@ -7,6 +7,7 @@ export const Inicio = () => {
         <div className="inicio">
            <Link to="/">
                 <h1 className="title">Inicio</h1>
+
            </Link>
             <Link to="/">
                 <h1 className="title">Productos</h1>
