@@ -8,11 +8,11 @@ export const ProductoItem = ({key, id, title, price, image, category, cantidad})
     const addCarrito = value.addCarrito;
     return (
         <div className="producto">
-            <a>
+            <Link to={`/producto/${id}`}>
                 <div className="producto__img">
                     <img src={image} alt=""/>
                 </div>
-            </a>
+            </Link>
             <div className="producto__footer">
                 <h1>{title}</h1>
                 <p>{category}</p>
@@ -23,7 +23,7 @@ export const ProductoItem = ({key, id, title, price, image, category, cantidad})
                     Añadir al carrito
                 </button>
                 <div>
-                    <a href="#" className="btn">Vista</a>
+                    <Link to={`/producto/${id}`} className="btn">Vista</Link>
                 </div>
             </div>
         </div>
