@@ -89,8 +89,8 @@ export const Carrito = () => {
                     }
                 </div>
                 <div className="carrito__footer">
-                    <h3>Total: {total}</h3>
-                    <button className="btn">Payment</button>
+                    <h3>Total: ${total}</h3>
+                    <button className="btn">Comprar</button>
                 </div>
             </div>
         </div>

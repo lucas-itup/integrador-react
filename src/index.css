@@ -37,7 +37,7 @@ header {
     position: fixed;
     box-sizing: border-box;
     background-color: white;
-    box-shadow: 0 5px 10px #08a05c50;
+    box-shadow: 0 5px 10px black;
 }
 
 a {
@@ -47,7 +47,7 @@ a {
 }
 
 a:hover {
-    color: #08a05c;
+    color: gray;
 }
 
 li {
@@ -112,7 +112,7 @@ header .cart span {
 .title {
     font-size: 2rem;
     padding: 10rem 0 0 0;
-    color: #08a05c;
+    color: black;
 }
 
 .productos {
@@ -135,7 +135,7 @@ header .cart span {
 }
 
 .producto:hover {
-    border: 6px solid #08a05c55;
+    border: 6px solid gray;
 }
 
 .producto__img img {
@@ -175,24 +175,26 @@ header .cart span {
     margin: 1rem;
 }
 
-.buttom .btn{
-  border: none;
+ .btn button{
   outline: 0;
   cursor: pointer;
   border-radius: 5px;
+    border: 1px solid;
 }
 
+
 .buttom button{
-    background-color: #3033d3;
+    background-color: white;
     max-width: 250px;
     width: 100%;
     font-size: 1.5rem;
-    color: white;
+    color: black;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .buttom div {
-    background-color: #08a05c;
+    background-color: black;
     display: grid;
     align-items: center;
     margin-left: -2rem;
@@ -275,7 +277,7 @@ header .cart span {
     grid-template-columns: 1fr 2fr 1fr 1fr;
     width: 80%;
     margin: 2rem auto;
-    box-shadow: 0 1px 10px #08a05c;
+    box-shadow: 0 1px 10px black;
     border-radius: 5px;
 
 }
@@ -300,7 +302,7 @@ header .cart span {
 }
 
 .carrito__item box-icon{
-    fill: #08a05c;
+    fill: black;
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -333,12 +335,14 @@ header .cart span {
 
 .carrito__footer .btn{
     display: inline-block;
-    padding: .3rem 1rem;
-    font-size:  1.2rem;
-    background-color: #08a05c;
-    border: 0;
+    padding: .5rem 6rem;
+    font-size:  1.5rem;
+    font-weight: bolder;
+    background-color: white;
+    border: 1px solid;
     outline: 0 ;
     cursor: pointer;
+    margin: 25px;
 }
 
 .carrito__footer .btn:hover{
@@ -367,21 +371,21 @@ header .cart span {
 .detalles .price{
     font-size: 3rem;
     width: 100%;
-    color: #08a05c;
+    color: black;
 }
 
 .detalles button{
     max-width: 300px;
     margin:  1rem 0 0 0 ;
     padding: 1rem 1rem;
-    border: none;
     outline: 0;
-    background: #3033d3;
+    background: white;
     font-size: 1.6rem;
-    color: white;
+    color: black;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
+    border: 1px  solid ;
 }
 
 .detalles .grid{

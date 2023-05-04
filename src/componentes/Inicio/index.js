@@ -1,18 +1,14 @@
 import React from "react";
-import Portada  from "../../images/inicio.jpg"
+import Portada  from "../../images/drag-banner-10.jpg"
 import {Link} from "react-router-dom";
 
 export const Inicio = () => {
     return (
         <div className="inicio">
-           <Link to="/">
-                <h1 className="title">Inicio</h1>
-
-           </Link>
-            <Link to="/">
-                <h1 className="title">Productos</h1>
+            <Link to="/productos">
+                <img src={Portada} alt="portada"/>
             </Link>
-            <img src={Portada} alt="portada"/>
+
         </div>
     )
 };

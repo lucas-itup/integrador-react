@@ -23,7 +23,7 @@ export const ProductoItem = ({key, id, title, price, image, category, cantidad})
                     Añadir al carrito
                 </button>
                 <div>
-                    <Link to={`/producto/${id}`} className="btn">Vista</Link>
+                    <Link to={`/producto/${id}`} className="btn">Ver</Link>
                 </div>
             </div>
         </div>
