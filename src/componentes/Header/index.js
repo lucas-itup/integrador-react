@@ -6,7 +6,7 @@ import {DataContext} from "../../context/Dataprovider";
 export const Header = () => {
     const value = useContext(DataContext);
     const [menu, setMenu] = value.menu;
-    const [carrito] = value.carrito
+    const [carrito] = value.carrito;
 
     const toggleMenu = () =>{
         setMenu(!menu)

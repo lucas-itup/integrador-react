@@ -47,7 +47,17 @@ export const Carrito = () => {
             });
 
         }
-    }
+    };
+
+    const comprar = () => {
+        if (window.confirm("Quieres finalizar la compra ?")){
+            localStorage.removeItem("dataCarrito");
+            alert("Compra realizada con exito!");
+           window.location.reload();
+        }
+    };
+
+
     return (
         <div className={show1}>
             <div className={show2}>
@@ -90,7 +100,7 @@ export const Carrito = () => {
                 </div>
                 <div className="carrito__footer">
                     <h3>Total: ${total}</h3>
-                    <button className="btn">Comprar</button>
+                    <button onClick={() => comprar()} className="btn">Comprar</button>
                 </div>
             </div>
         </div>

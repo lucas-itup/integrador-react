@@ -25,6 +25,7 @@ export const DataProvider =  (props) => {
                 return producto.id === id
             })
             setCarrito([...carrito , ...data])
+            alert("El producto se ha añadido al carrito.")
         }else{
             alert("El producto ya se ha añadido al carrito.")
         }
