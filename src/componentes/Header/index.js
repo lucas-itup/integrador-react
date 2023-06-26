@@ -25,6 +25,9 @@ export const Header = () => {
                 <li>
                     <Link to="/productos">Productos</Link>
                 </li>
+                <li>
+                    <Link to="/login">Login</Link>
+                </li>
             </ul>
             <div className="cart" onClick={toggleMenu}>
                 <box-icon name="cart"></box-icon>
