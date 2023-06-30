@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 export const Inicio = () => {
     return (
         <div className="inicio">
-            <Link to="/productos">
+            <Link to="/">
                 <img src={Portada} alt="portada"/>
             </Link>
 
