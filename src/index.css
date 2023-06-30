@@ -188,6 +188,7 @@ header .cart span {
     max-width: 250px;
     width: 100%;
     font-size: 1.5rem;
+    margin : 0px;
     color: black;
     font-weight: 600;
     cursor: pointer;
