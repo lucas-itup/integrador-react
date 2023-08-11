@@ -27,7 +27,7 @@ export const Viewlogin = () => {
                 setError('Credenciales incorrectas. Por favor, verifica tu nombre de usuario y contraseña.');
             }
         } catch (error) {
-            console.error('Error de inicio de sesión:', error.response.data);
+            console.error('Error de inicio de sesión:', error.response ? error.response.data : error.message);
             setError('Credenciales incorrectas. Por favor, verifica tu nombre de usuario y contraseña.');
         }
     };
