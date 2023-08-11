@@ -28,7 +28,7 @@ export const Registro = () => {
                 if (response.status === 201) {
 
                     // Redirige al usuario a la página deseada después del registro exitoso
-                    navigate('/');
+                    navigate('/login');
                 }
             }
         } catch (error) {
@@ -84,7 +84,7 @@ export const Registro = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <button onClick={handleAceptar}>Aceptar</button>
+                    <button type="button" onClick={handleAceptar}>Aceptar</button>
                 </form>
                 <p className="register-text">
                     Si ya tienes una cuenta, <Link to="/login">Acceder</Link>
