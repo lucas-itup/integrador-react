@@ -32,7 +32,7 @@ export const Registro = () => {
                 }
             }
         } catch (error) {
-            console.error('Error de registro:', error.response.data);
+            console.error('Error de Registro:', error.response ? error.response.data : error.message);
             // Aquí puedes mostrar un mensaje de error al usuario si lo deseas
         }
     };
