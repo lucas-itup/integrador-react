@@ -16,7 +16,7 @@ export const Registro = () => {
         try {
             // Realiza la validación de los campos
             if (nombre && apellido && email && telefono && usuario && password) {
-                const response = await axios.post('http://localhost:3000/auth/register', {
+                const response = await axios.post('https://rich-gray-bream-cuff.cyclic.app/auth/register', {
                     nombre,
                     apellido,
                     email,
