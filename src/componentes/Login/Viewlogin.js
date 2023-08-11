@@ -14,7 +14,9 @@ export const Viewlogin = () => {
         try {
             // Realiza la validación de los campos
             if (username && password) {
-                const response = await axios.post('https://rich-gray-bream-cuff.cyclic.app/auth/login', { username, password });
+                const response = await axios.post('https://rich-gray-bream-cuff.cyclic.app/auth/login', { username, password }, {
+                    withCredentials: true
+                });
 
                 if (response.status === 200) {
                     localStorage.setItem('isLoggedIn', true);
