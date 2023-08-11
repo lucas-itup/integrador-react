@@ -85,6 +85,7 @@ export const Registro = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <button type="button" onClick={handleAceptar}>Aceptar</button>
+                    {error && <p className="error-message">{error}</p>}
                 </form>
                 <p className="register-text">
                     Si ya tienes una cuenta, <Link to="/login">Acceder</Link>
