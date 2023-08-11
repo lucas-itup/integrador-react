@@ -14,7 +14,7 @@ export const Viewlogin = () => {
         try {
             // Realiza la validación de los campos
             if (username && password) {
-                const response = await axios.post('https://integrador-react-ashy.vercel.app/login', { username, password });
+                const response = await axios.post('https://integrador-react-ashy.vercel.app/auth/login', { username, password });
 
                 if (response.status === 200) {
                     localStorage.setItem('isLoggedIn', true);
