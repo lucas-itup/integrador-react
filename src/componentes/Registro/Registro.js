@@ -33,7 +33,7 @@ export const Registro = () => {
             }
         } catch (error) {
             console.error('Error de Registro:', error.response ? error.response.data : error.message);
-            setError('Credenciales incorrectas. Por favor, verifica tu nombre de usuario y contraseña.');
+            setError('Credenciales incorrectas.' + error.response ? error.response.data : error.message);
             // Aquí puedes mostrar un mensaje de error al usuario si lo deseas
         }
     };
