@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import {Header} from "./componentes/Header";
 import {BrowserRouter as Router} from "react-router-dom";
 import 'boxicons';
@@ -12,11 +12,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 library.add(fab);
 
 function App() {
+    let storedIsLoggedIn = false;
+    if (localStorage.getItem('isLoggedIn') === 'true'){
+        storedIsLoggedIn = true
+    }
+    const [isLoggedIn, setIsLoggedIn] = useState(storedIsLoggedIn);
     return (
         <DataProvider>
             <div className="App">
                 <Router>
-                    <Header/>
+                    <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
                     <Carrito/>
                     <Paginas/>
                     <Footer/>

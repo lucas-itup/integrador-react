@@ -1,36 +1,19 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Logo from "../../images/Logo-Punto-blue.jpg"
 import {DataContext} from "../../context/Dataprovider";
 import { Link, useNavigate } from 'react-router-dom';
-export const Header = () => {
+export const Header = ({  setIsLoggedIn }) => {
     const value = useContext(DataContext);
     const [menu, setMenu] = value.menu;
     const [carrito] = value.carrito;
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para controlar si el usuario está logeado
     const navigate = useNavigate();
     const toggleMenu = () => {
         setMenu(!menu);
     };
-
-    const handleLogin = () => {
-        const username = ''; // Obtener el valor del nombre de usuario desde el formulario
-        const password = '';
-        // Realiza la validación de los campos
-        if (username && password) {
-            setIsLoggedIn(true);
-            // Redirige al usuario a la página deseada después de iniciar sesión
-            navigate('/');
-        }
-    };
-
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const handleLogout = () => {
-        // Realiza las acciones necesarias para cerrar sesión
-        // ...
-
-        // Actualiza el estado isLoggedIn a false
+        localStorage.removeItem('isLoggedIn');
         setIsLoggedIn(false);
-
-        // Redirige al usuario a la página de inicio de sesión
         navigate('/login');
     };
     return (
@@ -48,9 +31,10 @@ export const Header = () => {
                     <Link to="/productos">Productos</Link>
                 </li>
 
+                {/* Condicionalmente renderiza el botón de cierre de sesión o el enlace de inicio de sesión */}
                 {isLoggedIn ? (
                     <li>
-                        <button onClick={handleLogout}>Cerrar sesión</button>
+                        <Link onClick={handleLogout}>Cerrar sesión</Link>
                     </li>
                 ) : (
                     <li>
