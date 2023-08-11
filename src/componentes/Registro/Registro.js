@@ -11,7 +11,7 @@ export const Registro = () => {
     const [telefono, setTelefono] = useState('');
     const [usuario, setUsuario] = useState('');
     const [password, setPassword] = useState('');
-
+    const [error, setError] = useState('');
     const handleAceptar = async () => {
         try {
             // Realiza la validación de los campos
@@ -33,6 +33,7 @@ export const Registro = () => {
             }
         } catch (error) {
             console.error('Error de Registro:', error.response ? error.response.data : error.message);
+            setError('Error de Registro: ' + error.response ? error.response.data : error.message);
             // Aquí puedes mostrar un mensaje de error al usuario si lo deseas
         }
     };
