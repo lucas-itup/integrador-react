@@ -2,7 +2,7 @@ import React, {useContext, useState, useEffect} from "react";
 import {DataContext} from "../../context/Dataprovider";
 import {useParams} from "react-router-dom";
 import {ProductoItem} from "./ProductoItem";
-
+import axios from 'axios';
 
 export const ProductoDetalles = () => {
     const value = useContext(DataContext);
@@ -12,13 +12,15 @@ export const ProductoDetalles = () => {
     const params = useParams();
     let item = 0;
     useEffect(() => {
-        productos.forEach(producto => {
-            item = 0;
-            if (producto.id === parseInt(params.id)) {
-                setDetalle(producto);
-            }
-        });
-    }, [params.id, productos]);
+        axios.get(`https://rich-gray-bream-cuff.cyclic.app/data/producto/${params.id}`) // Reemplaza con la URL correcta de tu API
+            .then(response => {
+                setDetalle(response.data);
+                console.log(response.data.image)
+            })
+            .catch(error => {
+                console.error('Error al obtener los detalles del producto', error);
+            });
+    }, [params.id]);
 
 
     return (
@@ -28,7 +30,7 @@ export const ProductoDetalles = () => {
                     <h2>{detalle.title}</h2>
                     <p className="price">${detalle.price}</p>
                     <button onClick={() => addCarrito(detalle.id)}> Añadir al carrito</button>
-                    <img src={detalle.image} alt={detalle.title}/>
+                    <img src={"." +detalle.image} alt={detalle.title}/>
                     <div className="description">
                         <p><b>Description:</b> is simply dummy text of the printing and typesetting industry. Lorem
                             Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
@@ -52,7 +54,7 @@ export const ProductoDetalles = () => {
                                     id={producto.id}
                                     title={producto.title}
                                     price={producto.price}
-                                    image={producto.image}
+                                    image={"." +producto.image}
                                     category={producto.category}
                                     cantidad={producto.cantidad}
                                 />

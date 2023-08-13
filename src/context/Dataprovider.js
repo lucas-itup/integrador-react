@@ -8,13 +8,16 @@ export const DataProvider =  (props) => {
     const [carrito , setCarrito] = useState([]);
     const [total , setTotal] = useState(0);
     useEffect(() => {
-        const producto = Data.items;
-        if (producto){
-            setProductos(producto)
-        }else{
-            setProductos([])
-        }
-    } , []);
+        // Realiza la llamada a la API para obtener los productos
+        fetch("https://rich-gray-bream-cuff.cyclic.app/data/datos")
+            .then((response) => response.json())
+            .then((data) => {
+                setProductos(data);
+            })
+            .catch((error) => {
+                console.error("Error al obtener productos desde la API:", error);
+            });
+    }, []);
 
     const addCarrito = (id) =>{
         const check = carrito.every(item =>{
@@ -22,7 +25,7 @@ export const DataProvider =  (props) => {
         });
         if(check){
             const data = productos.filter(producto => {
-                return producto.id === id
+                return producto._id === id
             })
             setCarrito([...carrito , ...data])
             alert("El producto se ha añadido al carrito.")
