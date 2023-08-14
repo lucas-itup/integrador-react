@@ -20,6 +20,7 @@ export const Viewlogin = () => {
 
                 if (response.status === 200) {
                     localStorage.setItem('isLoggedIn', true);
+                    console.log(response)
                     // Redirige al usuario a la página deseada después de iniciar sesión
                     navigate('/');
                 }
