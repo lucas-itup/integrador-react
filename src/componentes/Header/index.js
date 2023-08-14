@@ -42,10 +42,13 @@ export const Header = ({  setIsLoggedIn }) => {
                     </li>
                 )}
             </ul>
-            <div className="cart" onClick={toggleMenu}>
-                <box-icon name="cart"></box-icon>
-                <span className="item__total">{carrito.length}</span>
-            </div>
+            {isLoggedIn ? (
+                <div className="cart" onClick={toggleMenu}>
+                    <box-icon name="cart"></box-icon>
+                    <span className="item__total">{carrito.length}</span>
+                </div>
+            ) : ( ""
+            )}
         </header>
     )
 };
