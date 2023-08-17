@@ -64,6 +64,8 @@ export const Carrito = () => {
                     headers: {
                         Authorization: `Bearer ` + localStorage.getItem('token'), // Reemplaza con el token JWT válido
                         'Content-Type': 'application/json',
+                        body: JSON.stringify({ carrito }), // Enviar el carrito como parte del cuerpo
+
                     },
                 });
 
