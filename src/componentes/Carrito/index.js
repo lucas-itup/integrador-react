@@ -68,7 +68,7 @@ export const Carrito = () => {
 
                     },
                 });
-
+                console.log(carrito)
                 if (response.ok) {
                     localStorage.removeItem('dataCarrito');
                     alert('Compra realizada con éxito!');
