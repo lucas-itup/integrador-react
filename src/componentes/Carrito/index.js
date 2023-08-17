@@ -62,12 +62,13 @@ export const Carrito = () => {
             console.log(localStorage.getItem('token'));
             console.log("Sd")
             try {
+                const productIds = carrito.map(producto => producto._id); // Obtén los IDs de los productos
                 const response = await fetch('https://rich-gray-bream-cuff.cyclic.app/cart/add', {
                     method: 'POST',
                     headers: {
                         Authorization: `Bearer ` + localStorage.getItem('token'), // Reemplaza con el token JWT válido
                         'Content-Type': 'application/json',
-                        body: JSON.stringify({ carrito }), // Enviar el carrito como parte del cuerpo
+                        body: JSON.stringify({ productIds }), // Enviar el carrito como parte del cuerpo
 
                     },
                 });
