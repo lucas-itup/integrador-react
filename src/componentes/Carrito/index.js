@@ -60,6 +60,7 @@ export const Carrito = () => {
         if (window.confirm('Quieres finalizar la compra?')) {
             console.log(carrito)
             console.log(localStorage.getItem('token'));
+            console.log(localStorage.getItem('user_id'));
             console.log("Sd")
             try {
                 const productIds = carrito.map(producto => producto._id); // Obtén los IDs de los productos
