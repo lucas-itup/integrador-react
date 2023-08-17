@@ -58,6 +58,9 @@ export const Carrito = () => {
     };*/
     const comprar = async () => {
         if (window.confirm('Quieres finalizar la compra?')) {
+            console.log(carrito)
+            console.log(localStorage.getItem('token'));
+            console.log("Sd")
             try {
                 const response = await fetch('https://rich-gray-bream-cuff.cyclic.app/cart/add', {
                     method: 'POST',
@@ -68,9 +71,6 @@ export const Carrito = () => {
 
                     },
                 });
-                console.log(carrito)
-                console.log(localStorage.getItem('token'));
-                console.log("Sd")
                 if (response.ok) {
                     localStorage.removeItem('dataCarrito');
                     alert('Compra realizada con éxito!');
