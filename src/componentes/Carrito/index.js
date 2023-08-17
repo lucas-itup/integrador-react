@@ -67,14 +67,13 @@ export const Carrito = () => {
                 const response = await fetch('https://rich-gray-bream-cuff.cyclic.app/cart/add', {
                     method: 'POST',
                     headers: {
-                        Authorization: `Bearer ` + localStorage.getItem('token'), // Reemplaza con el token JWT válido
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
                         'Content-Type': 'application/json',
-                        body: JSON.stringify({
-                            userId: localStorage.getItem('user_id'), // Incluye el userId en el cuerpo
-                            productIds,
-                        }),
-
                     },
+                    body: JSON.stringify({
+                        userId: localStorage.getItem('user_id'),
+                        productIds,
+                    }),
                 });
                 if (response.ok) {
                     localStorage.removeItem('dataCarrito');
