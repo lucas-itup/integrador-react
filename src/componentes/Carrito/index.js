@@ -49,11 +49,34 @@ export const Carrito = () => {
         }
     };
 
-    const comprar = () => {
+   /* const comprar = () => {
         if (window.confirm("Quieres finalizar la compra ?")){
             localStorage.removeItem("dataCarrito");
             alert("Compra realizada con exito!");
            window.location.reload();
+        }
+    };*/
+    const comprar = async () => {
+        if (window.confirm('Quieres finalizar la compra?')) {
+            try {
+                const response = await fetch('https://rich-gray-bream-cuff.cyclic.app/cart/add', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ` + localStorage.getItem('token'), // Reemplaza con el token JWT válido
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    localStorage.removeItem('dataCarrito');
+                    alert('Compra realizada con éxito!');
+                    window.location.reload();
+                } else {
+                    console.error('Error al finalizar la compra');
+                }
+            } catch (error) {
+                console.error('Error en la solicitud:', error);
+            }
         }
     };
 
