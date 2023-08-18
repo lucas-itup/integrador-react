@@ -27,7 +27,7 @@ export const Carrito = () => {
     const suma = id =>{
         console.log(id);
         carrito.forEach(item =>{
-            if (item.id === id){
+            if (item._id === id){
                item.cantidad += 1;
             }
             setCarrito([...carrito])
