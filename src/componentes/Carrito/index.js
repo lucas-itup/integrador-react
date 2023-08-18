@@ -27,7 +27,8 @@ export const Carrito = () => {
     const suma = id => {
         carrito.forEach(item => {
             if (item._id === id) { // Comparación usando igualdad estricta
-                item.cantidad += 2;
+                let cantidad = parseInt(item.cantidad)
+                cantidad += 1;
             }
         });
         setCarrito([...carrito]);
