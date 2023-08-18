@@ -112,7 +112,7 @@ export const Carrito = () => {
                                             <p className="price">${producto.price}</p>
                                         </div>
                                         <div>
-                                            <box-icon name="up-arrow" onClick={() => suma(producto.id)} type="solid">
+                                            <box-icon name="up-arrow" onClick={() => suma(producto._id)} type="solid">
 
                                             </box-icon>
                                             <p className="cantidad">{producto.cantidad}</p>
