@@ -117,7 +117,7 @@ export const Carrito = () => {
                                             <box-icon name="up-arrow" onClick={() => suma(producto._id)} type="solid">
 
                                             </box-icon>
-                                            <p className="cantidad">{producto.cantidad}</p>
+                                            <p className="cantidad">{parseInt(producto.cantidad)}</p>
                                             <box-icon name="down-arrow" onClick={() => resta(producto.id)} type="solid">
 
                                             </box-icon>
