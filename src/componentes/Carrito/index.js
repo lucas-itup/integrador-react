@@ -72,7 +72,7 @@ export const Carrito = () => {
                     },
                     body: JSON.stringify({
                         userId: localStorage.getItem('user_id'),
-                        productIds,
+                        carrito,
                     }),
                 });
                 if (response.ok) {
