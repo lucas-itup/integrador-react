@@ -21,7 +21,7 @@ export const DataProvider =  (props) => {
 
     const addCarrito = (id) =>{
         const check = carrito.every(item =>{
-            return item.id  !== id;
+            return item._id  !== id;
         });
         if(check){
             const data = productos.filter(producto => {
