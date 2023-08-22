@@ -50,8 +50,8 @@ export const ProductoDetalles = () => {
                             if ((detalle.category === producto.category) && (item < 6)) {
                                 item++;
                                 return <ProductoItem
-                                    key={producto.id}
-                                    id={producto.id}
+                                    key={producto._id}
+                                    id={producto._id}
                                     title={producto.title}
                                     price={producto.price}
                                     image={"." +producto.image}
