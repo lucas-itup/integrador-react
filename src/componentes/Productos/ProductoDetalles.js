@@ -29,7 +29,7 @@ export const ProductoDetalles = () => {
                 <div className="detalles">
                     <h2>{detalle.title}</h2>
                     <p className="price">${detalle.price}</p>
-                    <button onClick={() => addCarrito(detalle.id)}> Añadir al carrito</button>
+                    <button onClick={() => addCarrito(detalle._id)}> Añadir al carrito</button>
                     <img src={"." +detalle.image} alt={detalle.title}/>
                     <div className="description">
                         <p><b>Description:</b> is simply dummy text of the printing and typesetting industry. Lorem
