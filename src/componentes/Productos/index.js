@@ -13,8 +13,8 @@ export const ProductosLista = () => {
                     Array.isArray(productos)
                         ?  productos.map((producto) =>
                         <ProductoItem
-                            key={producto._id}
-                            id={producto._id}
+                            key={producto.id}
+                            id={producto.id}
                             title={producto.title}
                             price={producto.price}
                             image={producto.image}
