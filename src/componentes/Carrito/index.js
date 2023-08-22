@@ -17,7 +17,7 @@ export const Carrito = () => {
 
     const resta = id =>{
         carrito.forEach(item =>{
-            if (item.id === id){
+            if (item._id === id){
                 item.cantidad === 1 ? item.cantidad = 1 : item.cantidad -=1
             }
             setCarrito([...carrito])
@@ -38,7 +38,7 @@ export const Carrito = () => {
     const removeProducto = id => {
         if (window.confirm("Quieres eliminar el producto?")){
             carrito.forEach((item, index) => {
-                if (item.id === id){
+                if (item._id === id){
                     item.cantidad = 1;
                     carrito.splice(index , 1)
                 }
@@ -104,7 +104,7 @@ export const Carrito = () => {
                         }}> Carrito Vacio</h2> : <>
                             {
                                 carrito.map((producto) => (
-                                    <div className="carrito__item" key={producto.id}>
+                                    <div className="carrito__item" key={producto._id}>
                                         <img src={producto.image} alt=""/>
                                         <div>
                                             <h3>{producto.title}</h3>
@@ -115,11 +115,11 @@ export const Carrito = () => {
 
                                             </box-icon>
                                             <p className="cantidad">{parseInt(producto.cantidad)}</p>
-                                            <box-icon name="down-arrow" onClick={() => resta(producto.id)} type="solid">
+                                            <box-icon name="down-arrow" onClick={() => resta(producto._id)} type="solid">
 
                                             </box-icon>
                                         </div>
-                                        <div className="remove__item" onClick={() => removeProducto(producto.id)}>
+                                        <div className="remove__item" onClick={() => removeProducto(producto._id)}>
                                             <box-icon name="trash"></box-icon>
                                         </div>
                                     </div>
